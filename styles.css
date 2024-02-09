@@ -1,0 +1,78 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .contenedor {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .fondo-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Establecer z-index para que el fondo esté detrás de todo */
+  }
+  
+  .centro-contenido , img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+    position: relative; /* Añadir position: relative para que z-index funcione en los elementos hijos */
+    z-index: 1; /* Asegurarse de que el contenido esté sobre el fondo */
+  }
+  
+  .centro-imagen {
+    max-width: 100%;
+    height: 500px;
+    margin-bottom: 2000px;
+  }
+  
+  .botones {
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Añadir estas reglas CSS al final del archivo styles.css */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  .emoji-confetti {
+    position: absolute;
+    font-size: 24px; /* Ajusta el tamaño según tus preferencias */
+    color: #FFD700; /* Color del confeti, puedes ajustarlo según tu diseño */
+    user-select: none;
+    transform: rotate(0deg);
+    animation: fall 2s linear infinite;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  
+  
